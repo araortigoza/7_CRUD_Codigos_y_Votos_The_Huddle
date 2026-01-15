@@ -1,0 +1,30 @@
+{
+  "name": "crud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/araortigoza/7_CRUD_Codigos_y_Votos_The_Huddle.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/araortigoza/7_CRUD_Codigos_y_Votos_The_Huddle/issues"
+  },
+  "homepage": "https://github.com/araortigoza/7_CRUD_Codigos_y_Votos_The_Huddle#readme",
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "prisma": "^5.22.0"
+  }
+}

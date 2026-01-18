@@ -33,7 +33,7 @@ const eliminarTema = async (req, res) => {
 };
 
 const votarTema = async (req, res) => {
-    await temaModelo.eliminarTema(req.params.id);
+    await temaModelo.votarTema(req.params.id);
     res.json({ ok: true});
 };
 

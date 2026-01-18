@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn It, Love It</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+  <div class="contenedor">
+    <h1>Temas</h1>
+    
+    <a href="/crear" class="boton">Agregar Nuevo Tema</a>
+    
+    <div class="lista-temas">
+      <% temas.forEach(tema => { %>
+        <div class="tema-card">
+          <div class="tema-info">
+            <h2><%= tema.titulo %></h2>
+            <a href="<%= tema.enlace %>" target="_blank" class="enlace"><%= tema.enlace %></a>
+          </div>
+          
+          <div class="tema-acciones">
+            <button class="boton-votar" data-id="<%= tema.id %>" type="button">
+              Votar (<%= tema.votos %>)
+            </button>
+            <a href="/editar/<%= tema.id %>" class="boton-editar">Editar</a>
+            <form action="/eliminar/<%= tema.id %>" method="POST" style="display:inline;" onsubmit="return confirm('Seguro que desea eliminar el tema?');">
+              <button type="submit" class="boton-eliminar">Eliminar</button>
+            </form>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+  
+  <script src="/js/votos.js"></script>
+</body>
+</html>

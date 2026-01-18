@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.contenedor {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.boton {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.boton:hover {
+  background-color: #0056b3;
+}
+
+.lista-temas {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tema-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tema-info h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.enlace {
+  color: #007bff;
+  font-size: 14px;
+}
+
+.tema-acciones {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.boton-votar {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.boton-votar:hover {
+  background-color: #218838;
+}
+
+.boton-editar {
+  background-color: #ffc107;
+  color: #333;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.boton-editar:hover {
+  background-color: #e0a800;
+}
+
+.boton-eliminar {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.boton-eliminar:hover {
+  background-color: #c82333;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.campo label {
+  font-weight: bold;
+  color: #333;
+}
+
+.campo input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.botones-formulario {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.boton-cancelar {
+  background-color: #6c757d;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.boton-cancelar:hover {
+  background-color: #5a6268;
+}

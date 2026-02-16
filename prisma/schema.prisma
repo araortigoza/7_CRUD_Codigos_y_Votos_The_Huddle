@@ -17,6 +17,7 @@ model Tema {
 model Enlace {
   id      Int    @id @default(autoincrement())
   url     String
+  votos   Int    @default(0)
   temaId  Int
   tema    Tema   @relation(fields: [temaId], references: [id], onDelete: Cascade)
 }

@@ -1,32 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("DomContentLoaded ejecutado");
-    const botonesVotar = document.querySelectorAll('.boton-votar');
-    console.log("Botones:", botonesVotar.length);
+    const botonesVotarTemas = document.querySelectorAll('.boton-votar[data-tipo="tema"]');
+    const botonesVotarEnlaces = document.querySelectorAll('.boton-votar[data-tipo="enlace"]');
 
-    botonesVotar.forEach(boton => {
-        boton.addEventListener('click', async (evento) => {
-            console.log("click detectado");
-            evento.preventDefault();
-            evento.stopPropagation();
-
+    botonesVotarTemas.forEach(boton => {
+        boton.onclick = async () => {
             const temaId = boton.dataset.id;
-            console.log('Tema id:', temaId);
 
-            try {
-                console.log('Peticion enviada a /votar/' + temaId);
-                const respuesta = await fetch('/votar/' + temaId, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' }
-                });
-                console.log('Respuesta recibida:', respuesta.status);
+            const respuesta = await fetch(`/temas/${temaId}/votar`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' }
+            });
 
-                if (respuesta.ok) {
-                    console.log('Recargando pagina');
-                    location.reload();
-                }
-            } catch (error) {
-                console.error('Error:', error);
+            if (respuesta.ok) {
+                location.reload();
             }
-        });
+        };
+    });
+
+    botonesVotarEnlaces.forEach(boton => {
+        boton.onclick = async () => {
+            const enlaceId = boton.dataset.id;
+
+            const respuesta = await fetch(`/enlaces/${enlaceId}/votar`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' }
+            });
+
+            if (respuesta.ok) {
+                location.reload();
+            }
+        };
     });
 });

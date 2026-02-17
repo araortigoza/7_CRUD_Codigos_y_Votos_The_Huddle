@@ -8,26 +8,41 @@
 </head>
 <body>
   <div class="contenedor">
-    <h1>Temas</h1>
+    <h1>Vota por tu K-drama Favorito</h1>
     
-    <a href="/crear" class="boton">Agregar Nuevo Tema</a>
+    <a href="/temas/nuevo" class="boton">Agregar Nuevo Tema</a>
     
     <div class="lista-temas">
       <% temas.forEach(tema => { %>
         <div class="tema-card">
-          <div class="tema-info">
-            <h2><%= tema.titulo %></h2>
-            <a href="<%= tema.enlace %>" target="_blank" class="enlace"><%= tema.enlace %></a>
+          <div class="tema-header">
+            <input type="text" class="input-editar" id="tema-titulo-<%= tema.id %>" value="<%= tema.titulo %>">
+            <div class="tema-acciones">
+              <button class="boton-votar" data-id="<%= tema.id %>" data-tipo="tema" type="button">
+                Votar (<%= tema.votos %>)
+              </button>
+              <button class="boton-actualizar" data-id="<%= tema.id %>" type="button">Guardar</button>
+              <button class="boton-eliminar" data-id="<%= tema.id %>" data-tipo="tema" type="button">Eliminar Tema</button>
+            </div>
           </div>
           
-          <div class="tema-acciones">
-            <button class="boton-votar" data-id="<%= tema.id %>" type="button">
-              Votar (<%= tema.votos %>)
-            </button>
-            <a href="/editar/<%= tema.id %>" class="boton-editar">Editar</a>
-            <form action="/eliminar/<%= tema.id %>" method="POST" style="display:inline;" onsubmit="return confirm('Seguro que desea eliminar el tema?');">
-              <button type="submit" class="boton-eliminar">Eliminar</button>
-            </form>
+          <div class="enlaces-container">
+            <h3>Enlaces</h3>
+            <% tema.enlaces.forEach(enlace => { %>
+              <div class="enlace-item">
+                <input type="text" class="input-editar" id="enlace-url-<%= enlace.id %>" value="<%= enlace.url %>">
+                <button class="boton-votar" data-id="<%= enlace.id %>" data-tipo="enlace" type="button">
+                  Votar (<%= enlace.votos %>)
+                </button>
+                <button class="boton-actualizar-enlace" data-id="<%= enlace.id %>" type="button">Guardar</button>
+                <button class="boton-eliminar" data-id="<%= enlace.id %>" data-tipo="enlace" type="button">Eliminar</button>
+              </div>
+            <% }) %>
+            
+            <div class="agregar-enlace">
+              <input type="text" id="nuevo-enlace-<%= tema.id %>" placeholder="Nueva URL">
+              <button class="boton-agregar-enlace" data-tema-id="<%= tema.id %>" type="button">Agregar Enlace</button>
+            </div>
           </div>
         </div>
       <% }) %>
@@ -35,5 +50,7 @@
   </div>
   
   <script src="/js/votos.js"></script>
+  <script src="/js/temas.js"></script>
+  <script src="/js/enlaces.js"></script>
 </body>
 </html>

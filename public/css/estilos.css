@@ -11,7 +11,7 @@ body {
 }
 
 .contenedor {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   background: white;
   padding: 30px;
@@ -22,6 +22,12 @@ body {
 h1 {
   color: #333;
   margin-bottom: 20px;
+}
+
+h3 {
+  color: #555;
+  margin-bottom: 10px;
+  font-size: 16px;
 }
 
 .boton {
@@ -43,33 +49,37 @@ h1 {
 .lista-temas {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
 }
 
 .tema-card {
-  border: 1px solid #ddd;
-  padding: 15px;
-  border-radius: 4px;
+  border: 2px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.tema-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
 }
 
-.tema-info h2 {
-  font-size: 18px;
-  margin-bottom: 5px;
-  color: #333;
-}
-
-.enlace {
-  color: #007bff;
-  font-size: 14px;
+.input-editar {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-right: 10px;
 }
 
 .tema-acciones {
   display: flex;
-  gap: 10px;
-  align-items: center;
+  gap: 8px;
 }
 
 .boton-votar {
@@ -85,16 +95,17 @@ h1 {
   background-color: #218838;
 }
 
-.boton-editar {
-  background-color: #ffc107;
-  color: #333;
+.boton-actualizar {
+  background-color: #17a2b8;
+  color: white;
+  border: none;
   padding: 8px 15px;
-  text-decoration: none;
   border-radius: 4px;
+  cursor: pointer;
 }
 
-.boton-editar:hover {
-  background-color: #e0a800;
+.boton-actualizar:hover {
+  background-color: #138496;
 }
 
 .boton-eliminar {
@@ -108,6 +119,52 @@ h1 {
 
 .boton-eliminar:hover {
   background-color: #c82333;
+}
+
+.enlaces-container {
+  margin-top: 15px;
+}
+
+.enlace-item {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.boton-actualizar-enlace {
+  background-color: #ffc107;
+  color: #333;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.boton-actualizar-enlace:hover {
+  background-color: #e0a800;
+}
+
+.agregar-enlace {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+}
+
+.boton-agregar-enlace {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.boton-agregar-enlace:hover {
+  background-color: #5a6268;
 }
 
 .formulario {

@@ -7,10 +7,11 @@ const enlaceControlador = require('./controladores/enlaceControlador')
 const app = express(); // SE INSTANCIA LA APLICACION
 const puerto = process.env.PORT; // SE DEFINE EL PUERTO DE LA APLICACION
 
+// CONFIGURACIONES INTERNAS DEL SERVIDOR
 app.set('view engine', 'ejs'); // SE LE COMUNICA A EXPRESS QUE SE UTILIZARA EJS
 app.set('views', path.join(__dirname, 'vistas')); // SE INDICA QUE LAS VISTAS ESTAN EN SU CARPETA CORRESPONDIENTE
 
-// MIDDLEWARES
+// MIDDLEWARES // FUNCIONES QUE SE REALIZAN CADA VEZ QUE SE REALICE UNA PETICION
 app.use(express.urlencoded({ extended: true })); // SE CODIFICA EL MENSAJE DEL USUARIO UTILIZANDO LA LIBRERIA QS
 app.use(express.json()); // SE CONVIERTE LO QUE LLEGA DE FETCH (JSON) A UN OBJETO JAVASCRIPT
 app.use(express.static('public')); // SE LE COMUNICA AL SERVIDOR QUE EL NAVEGADOR PUEDE ACCEDER A LOS ARCHIVOS DENTRO DE LA CARPETA 'public'
